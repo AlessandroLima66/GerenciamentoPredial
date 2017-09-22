@@ -6,4 +6,21 @@
     android:layout_height="match_parent"
     tools:context="alecami.arqdesis.usjt.br.gerenciamentopredial.HomeActivity">
 
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cadastrar_usuario"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cadastrar_empresa"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/gerar_arquivo_acesso"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/configurar_temperatura"/>
 </android.support.constraint.ConstraintLayout>

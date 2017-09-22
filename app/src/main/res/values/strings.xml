@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">GerenciamentoPredial</string>
+    <string name="app_name">Gerenciamento Predial</string>
+    <string name="login_sistema">Login</string>
+    <string name="senha_sistema">Senha</string>
+    <string name="botao_login">Acessar</string>
+
+    <string name="cadastrar_usuario">Cadastrar Usuário</string>
+    <string name="cadastrar_empresa">Cadastrar Empresa</string>
+    <string name="gerar_arquivo_acesso">Gerar Arquivo de Acesso</string>
+    <string name="configurar_temperatura">Configurar Temperatura</string>
 </resources>
