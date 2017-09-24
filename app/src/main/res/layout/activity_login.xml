@@ -22,20 +22,21 @@
             android:hint="@string/login_sistema" />
 
         <EditText
-            android:layout_below="@id/login_sistema"
             android:id="@+id/senha_sistema"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/login_sistema"
             android:layout_weight="1"
-            android:hint="@string/senha_sistema" />
+            android:hint="@string/senha_sistema"
+            android:password="true" />
 
         <Button
+            android:id="@+id/botao"
             android:layout_below="@id/senha_sistema"
             android:layout_centerHorizontal="@id/senha_sistema"
             android:layout_width="97dp"
             android:layout_height="45dp"
-            android:text="@string/botao_login"
-            android:onClick="loginSistema" />
+            android:text="@string/botao_login" />
 
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
