@@ -1,10 +1,8 @@
 package alecami.arqdesis.usjt.br.gerenciamentopredial;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,9 +12,9 @@ import java.util.ArrayList;
 public class LoginActivity extends AppCompatActivity {
     private EditText login;
     private EditText senha;
-    ArrayList<Usuario> lista;
     private Button botao;
-    public static final String CHAVE = "alecami.arqdesis.usjt.br.gerenciamentopredial.chave";
+    private ArrayList<Usuario> lista;
+    public static final String CHAVE = "alecami.arqdesis.usjt.br.gerenciamentopredial.tipoUsuario";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,23 +28,30 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
-                Usuario usuarioLogin = new Usuario(login.getText().toString(), senha.getText().toString());
-                lista = geraListaUsuarios();
 
+                Usuario usuarioLogin = new Usuario();
+                usuarioLogin.setLogin(login.getText().toString());
+                usuarioLogin.setSenha(senha.getText().toString());
+                lista = geraListaUsuarios();
                 if (lista.contains(usuarioLogin)) {
+                    //Passando para a intent o tipo do usuário
+                    int tipoUsuario = lista.get(lista.indexOf(usuarioLogin)).getTipoUsuario();
+                    intent.putExtra(CHAVE,tipoUsuario);
                     //vai para proxima página
                     startActivity(intent);
+                }else {
+                    login.setText("");
+                    senha.setText("");
                 }
-                //voltar para página de login
-                return;
             }
         });
     }
 
     public ArrayList<Usuario> geraListaUsuarios() {
         ArrayList<Usuario> lista = new ArrayList();
-        lista.add(new Usuario("alessandro", "1234"));
-        lista.add(new Usuario("camilla", "1234"));
+        lista.add(new Usuario("alessandro", "1234", TipoUsuario.ATENDENTE));
+        lista.add(new Usuario("camilla", "1234",TipoUsuario.FUNCIONARIO));
+        lista.add(new Usuario("Japa", "1234",TipoUsuario.SINDICO));
         return lista;
     }
 }

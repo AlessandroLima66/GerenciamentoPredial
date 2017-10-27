@@ -3,10 +3,16 @@ package alecami.arqdesis.usjt.br.gerenciamentopredial;
 public class Usuario {
     private String login;
     private String senha;
+    private TipoUsuario tipoUsuario;
 
-    public Usuario(String login, String senha){
+    public Usuario(){
+
+    }
+
+    public Usuario(String login, String senha, TipoUsuario tipoUsuario){
         setLogin(login);
         setSenha(senha);
+        setTipoUsuario(tipoUsuario);
     }
 
     public String getLogin() {
@@ -23,6 +29,12 @@ public class Usuario {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public void setTipoUsuario(TipoUsuario tipoUsuario) { this.tipoUsuario = tipoUsuario; }
+
+    public int getTipoUsuario() {
+        return tipoUsuario.getUsuario();
     }
 
     @Override
