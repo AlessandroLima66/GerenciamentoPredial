@@ -23,18 +23,19 @@ public class HomeActivity extends AppCompatActivity {
 
     public void ativaBotoesPorUsuario(){
         Intent intent = getIntent();
-        int tipo = intent.getIntExtra(LoginActivity.CHAVE,4);
+        String tipo = intent.getStringExtra(LoginActivity.CHAVE);
+        //int tipo = intent.getIntExtra(LoginActivity.CHAVE,4);
 
         switch (tipo){
-            case 1:
+            case "Sindico":
                 cadEmpresa.setEnabled(true);
                 cadUsuario.setEnabled(true);
                 gerarArquivo.setEnabled(true);
                 break;
-            case 2:
+            case "Funcionario":
                 cadEmpresa.setEnabled(true);
                 break;
-            case 3:
+            case "Atendente":
                 cadEmpresa.setEnabled(true);
                 cadUsuario.setEnabled(true);
                 break;

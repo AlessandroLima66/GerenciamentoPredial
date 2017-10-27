@@ -33,9 +33,7 @@ public class Usuario {
 
     public void setTipoUsuario(TipoUsuario tipoUsuario) { this.tipoUsuario = tipoUsuario; }
 
-    public int getTipoUsuario() {
-        return tipoUsuario.getUsuario();
-    }
+    public TipoUsuario getTipoUsuario() { return tipoUsuario; }
 
     @Override
     public boolean equals(Object o) {

@@ -35,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
                 lista = geraListaUsuarios();
                 if (lista.contains(usuarioLogin)) {
                     //Passando para a intent o tipo do usuário
-                    int tipoUsuario = lista.get(lista.indexOf(usuarioLogin)).getTipoUsuario();
+                    String tipoUsuario = lista.get(lista.indexOf(usuarioLogin)).getTipoUsuario().getUsuario();
                     intent.putExtra(CHAVE,tipoUsuario);
                     //vai para proxima página
                     startActivity(intent);
@@ -51,7 +51,7 @@ public class LoginActivity extends AppCompatActivity {
         ArrayList<Usuario> lista = new ArrayList();
         lista.add(new Usuario("alessandro", "1234", TipoUsuario.ATENDENTE));
         lista.add(new Usuario("camilla", "1234",TipoUsuario.FUNCIONARIO));
-        lista.add(new Usuario("Japa", "1234",TipoUsuario.SINDICO));
+        lista.add(new Usuario("japa", "1234",TipoUsuario.SINDICO));
         return lista;
     }
 }
